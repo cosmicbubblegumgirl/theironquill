@@ -1,0 +1,107 @@
+{
+  "brand": {
+    "name": "The Iron Quill",
+    "subtitle": "Ancient Ledger Edition",
+    "tagline": "Where every name enters the chronicle, and every word lingers like candlelight in ancient halls.",
+    "footer": "A QuantumCupcakeCreation"
+  },
+  "brochureIntro": {
+    "title": "The Shire Inn",
+    "summary": "A storybook stay in a grand rustic retreat with fireplaces, reading nooks, romantic suites, and quiet corners for long candlelit evenings.",
+    "motto": "Sleep in comfort. Wake in a fairytale."
+  },
+  "highlights": [
+    {
+      "title": "Hearthhall Lounge",
+      "image": "/assets/inn-hearthhall.png",
+      "detail": "Grand gathering hall arranged around the fireplace with candlelight, soft seating, and mountain-facing windows. Ideal for evening reading, quiet conversation, and slow winter nights."
+    },
+    {
+      "title": "Raven's Rest Library",
+      "image": "/assets/inn-library.png",
+      "detail": "An old-world reading retreat filled with books, warm lamplight, and the spirit of old stories. Perfect for journaling, board games, and lingering over the guestbook."
+    },
+    {
+      "title": "Oak & Ember Dining Room",
+      "image": "/assets/inn-dining.png",
+      "detail": "Rustic farmhouse dining with timbered ceilings, breakfast spreads, candlelit suppers, platters of food, and tasting menus in a cozy manor-house setting."
+    },
+    {
+      "title": "Guest Suites & Manor Grounds",
+      "image": "/assets/inn-exterior.png",
+      "detail": "A dramatic country manor with archways, stone corridors, turret views, and richly dressed suites designed for literary escapes, romantic weekends, and retreat stays."
+    }
+  ],
+  "rooms": [
+    {
+      "title": "Embermere Suite",
+      "image": "/assets/room-embermere.png",
+      "mood": "Romantic hearth retreat",
+      "palette": "Amber gold, walnut brown, charcoal grey",
+      "detail": "A warm and intimate suite with rich wood tones and evening-repose energy for couples seeking a refined fireside retreat."
+    },
+    {
+      "title": "Moonthorn Chamber",
+      "image": "/assets/room-moonthorn.png",
+      "mood": "Moonlit gothic calm",
+      "palette": "Midnight blue, silver ash, soft ivory",
+      "detail": "A refined chamber inspired by moonlight through cathedral windows, balancing drama and softness with a noble stillness."
+    },
+    {
+      "title": "Willowfen Room",
+      "image": "/assets/room-willowfen.png",
+      "mood": "Woodland morning sanctuary",
+      "palette": "Sage green, linen cream, warm oak",
+      "detail": "A lighter room for guests seeking peace, fresh air, and the natural hush of an early countryside morning."
+    },
+    {
+      "title": "Hearthstone Chamber",
+      "image": "/assets/room-hearthstone.png",
+      "mood": "Traditional rustic lodge",
+      "palette": "Terracotta, smoke grey, honey brown",
+      "detail": "A lived-in, low-to-earth suite that pairs rugged texture with the glow of a crackling fire and timeless inn character."
+    },
+    {
+      "title": "Starfall Loft",
+      "image": "/assets/room-starfall.png",
+      "mood": "Celestial storybook hideaway",
+      "palette": "Dusky plum, antique gold, parchment",
+      "detail": "A dreamy upper-level room with reading alcove energy for romantics, booklovers, and anyone drawn to wonder."
+    },
+    {
+      "title": "Rowanveil Suite",
+      "image": "/assets/room-rowanveil.png",
+      "mood": "Noble woodland elegance",
+      "palette": "Moss bronze, oat linen",
+      "detail": "A suite that combines rustic luxury with nature-toned comfort for a stay that feels both polished and grounded."
+    },
+    {
+      "title": "Thistlekeep Room",
+      "image": "/assets/room-thistlekeep.png",
+      "mood": "Heritage manor charm",
+      "palette": "Rosewood, muted sage, cream",
+      "detail": "A vintage room with countryside elegance for guests who love traditional comfort and heirloom detail."
+    },
+    {
+      "title": "Sable Hearth Suite",
+      "image": "/assets/room-sablehearth.png",
+      "mood": "Moody luxury retreat",
+      "palette": "Cocoa, black iron, warm flax",
+      "detail": "A rich dramatic suite made for quiet nights, deep sleep, and the feeling of being safely tucked away from the world."
+    }
+  ],
+  "brochurePanels": [
+    { "title": "Front Cover", "image": "/assets/brochure-front-right.png", "caption": "A storybook stay in a grand rustic retreat." },
+    { "title": "Welcome Panel", "image": "/assets/brochure-front-center.png", "caption": "The inn brochure introduces spaces, guest rooms, dining, and the character of the stay." },
+    { "title": "Booking Panel", "image": "/assets/brochure-front-left.png", "caption": "Ideal for literary escapes, romantic getaways, and cozy group stays." },
+    { "title": "Experiences Panel", "image": "/assets/brochure-back-left.png", "caption": "Fireside evenings, reading hours, candlelit dining, scenic wandering, and private retreat time." },
+    { "title": "Guest Rooms I–IV", "image": "/assets/brochure-back-center.png", "caption": "Four suites framed around hearth tones, moonlit calm, woodland mornings, and rustic lodge warmth." },
+    { "title": "Guest Rooms V–VIII", "image": "/assets/brochure-back-right.png", "caption": "A second set of suites built around wonder, elegance, manor charm, and moody luxury." }
+  ],
+  "rotatingLines": [
+    "The house waits beneath olive velvet drapery and candlelit rafters.",
+    "A new page opens each time the owl courier takes wing with a sealed letter.",
+    "The Shire Inn brochure rustles like folded parchment beside the guest ledger.",
+    "Stories travel further when they leave the hall beneath the crest of the Iron Quill."
+  ]
+}
