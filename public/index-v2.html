@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Iron Quill — Ancient Guestbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body data-version="v2">
+    <div class="page-grain"></div>
+    <div class="floating-embers"></div>
+
+    <main class="site-shell">
+      <section class="book-layout reveal-on-load">
+        <aside class="cover-panel">
+          <div class="cover-inner-frame"></div>
+          <p class="kicker">Ledger of the Shire Inn</p>
+          <img class="brand-mark hero-logo" src="/assets/logo-olive.png" alt="The Iron Quill crest" />
+          <div class="version-ribbon">Chronicle Edition • v1</div>
+          <h1 class="visually-hidden">The Iron Quill</h1>
+          <p class="tagline">Where every name enters the chronicle, and every word lingers like candlelight in ancient halls.</p>
+
+          <div class="rotating-copy">
+            <span class="glyph">✦</span>
+            <span id="rotatingLine">The hall stands ready for the next candlelit account.</span>
+          </div>
+
+          <div class="quick-stats">
+            <article>
+              <span>Entries</span>
+              <strong id="messageCount">0</strong>
+            </article>
+            <article>
+              <span>House Mood</span>
+              <strong id="currentMoodLabel">Awaiting a visitor</strong>
+            </article>
+            <article>
+              <span>Inn</span>
+              <strong>The Shire Inn</strong>
+            </article>
+          </div>
+        </aside>
+
+        <section class="page-panel">
+          <div class="chapter-kicker">Chapter I • Sign the Ledger</div>
+          <h2>Enter the Chronicle</h2>
+          <p class="intro-copy">Write as if your words will outlive the hour, sealed in wax and carried beyond the old stone halls.</p>
+
+          <form id="guestbook-form" class="chronicle-form" autocomplete="off">
+            <div class="field field-span">
+              <label for="guestName">Name or title</label>
+              <input id="guestName" name="guestName" type="text" maxlength="40" placeholder="Lady Rowan, Quiet Wanderer, Keeper of Candles…" required />
+            </div>
+
+            <div class="field field-span">
+              <label for="message">What should the chronicle remember?</label>
+              <textarea id="message" name="message" rows="5" maxlength="280" placeholder="Leave your words in the realm’s book of remembrance…" required></textarea>
+            </div>
+
+            <div class="field">
+              <label for="mood">Mood of the stay</label>
+              <select id="mood" name="mood" required>
+                <option value="">Choose a feeling…</option>
+                <option value="ember">Ember of Hope</option>
+                <option value="moonlit">Moonlit Wonder</option>
+                <option value="storm">Stormforged Resolve</option>
+                <option value="mirth">Feasting Mirth</option>
+                <option value="solemn">Quiet Oath</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="rating">Experience rating</label>
+              <select id="rating" name="rating" required>
+                <option value="">Choose a rating…</option>
+                <option value="5">5 • Fit for the crown</option>
+                <option value="4">4 • Noble and memorable</option>
+                <option value="3">3 • Worthy of the hall</option>
+                <option value="2">2 • A modest passage</option>
+                <option value="1">1 • In need of kinder weather</option>
+              </select>
+            </div>
+
+            <div class="field field-span">
+              <label for="attachment">Attach a keepsake <span>(image or audio, up to 1.5 MB)</span></label>
+              <input id="attachment" name="attachment" type="file" accept="image/*,audio/*" />
+              <p class="field-hint">Add a portrait, a sigil, or a voice note to be bound with your entry.</p>
+              <div id="attachmentPreview" class="attachment-preview" hidden></div>
+            </div>
+
+            <div class="field field-span form-actions">
+              <button type="submit" id="submitBtn">Seal the Letter</button>
+              <p id="status" class="status-line">The quill rests beside the page.</p>
+            </div>
+          </form>
+        </section>
+      </section>
+
+      <section class="inn-section reveal-on-load">
+        <div class="section-header">
+          <div>
+            <p class="chapter-kicker">Chapter II • The Inn</p>
+            <h3>The Shire Inn, retold in the chronicle</h3>
+          </div>
+          <p class="section-blurb" id="brochureSummary">A storybook stay in a grand rustic retreat.</p>
+        </div>
+        <div id="innHighlights" class="inn-highlights"></div>
+      </section>
+
+      <section class="brochure-section reveal-on-load">
+        <div class="section-header brochure-header">
+          <div>
+            <p class="chapter-kicker">Chapter III • The Folded Brochure</p>
+            <h3>Turn through the inn brochure</h3>
+          </div>
+          <p class="section-blurb">Click the parchment or use the arrows to move through one panel at a time.</p>
+        </div>
+        <div class="brochure-viewer-shell">
+          <button id="brochurePrev" class="brochure-nav" type="button" aria-label="Previous brochure panel">‹</button>
+          <button id="brochureStage" class="brochure-stage" type="button" aria-live="polite" aria-label="Brochure panel"></button>
+          <button id="brochureNext" class="brochure-nav" type="button" aria-label="Next brochure panel">›</button>
+        </div>
+        <div class="brochure-bottom-bar">
+          <div id="brochureProgress" class="brochure-progress-text"></div>
+          <div id="brochureThumbs" class="brochure-thumbs"></div>
+        </div>
+      </section>
+
+      <section class="suites-section reveal-on-load">
+        <div class="section-header">
+          <div>
+            <p class="chapter-kicker">Chapter IV • Signature Rooms</p>
+            <h3>Rooms and retreats</h3>
+          </div>
+          <p class="section-blurb">A timed gallery of suites from the inn, recast as a moving chronicle of warmth, wonder, and quiet luxury.</p>
+        </div>
+
+        <div id="suiteFilters" class="suite-filter-bar" aria-label="Filter suites by mood"></div>
+
+        <div class="suite-showcase-shell">
+          <button id="suitePrev" class="suite-nav" type="button" aria-label="Previous suite">‹</button>
+          <div id="suiteStage" class="suite-stage" aria-live="polite"></div>
+          <button id="suiteNext" class="suite-nav" type="button" aria-label="Next suite">›</button>
+        </div>
+
+        <div class="suite-bottom-bar">
+          <div id="suiteCounter" class="suite-counter"></div>
+          <div id="suiteDots" class="suite-dots"></div>
+        </div>
+      </section>
+
+      <section class="entries-section reveal-on-load">
+        <div class="section-header entries-header">
+          <div>
+            <p class="chapter-kicker">Chapter V • Voices in the Hall</p>
+            <h3>Recent entries</h3>
+          </div>
+          <div class="mood-legend">
+            <span class="legend-chip ember">Warm</span>
+            <span class="legend-chip moonlit">Wonder</span>
+            <span class="legend-chip storm">Resolve</span>
+            <span class="legend-chip mirth">Mirth</span>
+            <span class="legend-chip solemn">Oath</span>
+          </div>
+        </div>
+        <div id="emptyState" class="empty-state">
+          <div class="empty-crest">✧</div>
+          <p>No guest has signed the ancient page yet. Be the first to begin the tale.</p>
+        </div>
+        <ul id="messageList" class="message-list" aria-live="polite"></ul>
+      </section>
+
+      <footer class="site-footer reveal-on-load">
+        <div>
+          <strong>The Iron Quill</strong>
+          <span>Ancient ledger styling for the Kubernetes guestbook final.</span>
+        </div>
+        <div class="footer-mark">A QuantumCupcakeCreation</div>
+      </footer>
+    </main>
+
+    <div id="courierScene" class="courier-scene" aria-hidden="true">
+      <div class="courier-backdrop"></div>
+      <div class="courier-copy" id="courierCopy">Wax pressed. The crest descends.</div>
+      <div class="seal-stamp">
+        <img src="/assets/logo-olive.png" alt="The Iron Quill seal" />
+      </div>
+      <div class="sealed-letter">
+        <div class="letter-fold line-a"></div>
+        <div class="letter-fold line-b"></div>
+        <div class="wax-seal">
+          <img src="/assets/logo-olive.png" alt="Wax seal with Iron Quill crest" />
+        </div>
+      </div>
+      <div class="owl-wrap">
+        <div class="owl-flight"></div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
